@@ -8,21 +8,23 @@ dropIcon.addEventListener("click", () => {
 });
 
 turnQuestion.forEach((e) => {
-  e.addEventListener("click", () => {
-    e.parentElement.parentElement.classList.add("turn");
+  e.addEventListener("click", (e) => {
+    e.target.parentElement.parentElement.classList.add("turn");
   });
+});
+
+questionBoxes.forEach((e) => {
+  e.onclick = function (e) {
+    e.stopPropagation();
+  };
 });
 
 document.onclick = function (el) {
   questionBoxes.forEach((e) => {
-    e.onclick = function (e) {
-      e.stopPropagation();
-    };
     turnQuestion.forEach((q) => {
       if (el.target !== e && el.target !== q) {
         if (e.classList.contains("turn")) {
           e.classList.remove("turn");
-          console.log("yes");
         }
       }
     });
