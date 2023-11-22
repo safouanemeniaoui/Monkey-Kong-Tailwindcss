@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Rubik+Mono+One&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer {
+  body {
+    @apply font-OpenSans text-white bg-black;
+    overflow-x: hidden;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Start Header*/
+.drop-down {
+  left: 47%;
+}
+@media (min-width: 768px) {
+  .dis {
+    background-image: url("../images/brush.png") !important;
+    background-size: cover;
+    background-position-x: -13px;
+  }
+}
+
+/* End Header*/
+/* End Landing*/
+body {
+  background-image: url("../images/bg.jpg") !important;
+  background-size: cover;
+}
+
+@media (max-width: 1023px) {
+  .welcome h1:first-of-type {
+    font-size: 4.2rem !important;
+  }
+  .welcome h1:last-of-type {
+    font-size: 7.5rem !important;
+  }
+  .welcome h3 {
+    font-size: 0.9rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .landing img {
+    width: 70%;
+  }
+  .welcome h1:first-of-type {
+    font-size: 3.5rem !important;
+  }
+  .welcome h1:last-of-type {
+    font-size: 6rem !important;
+  }
+  .welcome h3 {
+    font-size: 0.7rem !important;
+  }
+}
+@media (max-width: 460px) {
+  .landing img {
+    width: 100%;
+  }
+  .welcome h1:first-of-type {
+    font-size: 2.8rem !important;
+  }
+  .welcome h1:last-of-type {
+    font-size: 5rem !important;
+  }
+  .welcome h3 {
+    font-size: 0.55rem !important;
+  }
+}
+/* End Landing*/
+/* Start Dominance*/
+.dominance2-title::after {
+  content: url(../images/2.png);
+  position: absolute;
+  top: -50px;
+  right: 0;
+  z-index: -1;
+}
+/* End Dominance*/
+/* Start Gallery*/
+.slider,
+.slider span,
+.question-box {
+  transform-style: preserve-3d;
+}
+.slider span {
+  transform: rotateY(calc(var(--i) * 45deg)) translateZ(350px);
+}
+
+/* End Gallery*/
+/* Start Questions*/
+.question-box > div {
+  backface-visibility: hidden;
+}
+.question-box > div:last-of-type {
+  transform: rotateY(180deg);
+}
+.question-box.turn {
+  transform: rotateY(-180deg);
+}
+/* End Questions*/
